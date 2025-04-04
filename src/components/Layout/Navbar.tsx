@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,7 +22,9 @@ import ProfileMenu from "@/components/Profile/ProfileMenu";
 export const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isGlowing, setIsGlowing] = useState(false);
   const isMobile = useIsMobile();
+  const logoTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,14 +37,46 @@ export const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLogoClick = () => {
+    setIsGlowing(true);
+    
+    // Clear any existing timeout
+    if (logoTimerRef.current) {
+      clearTimeout(logoTimerRef.current);
+    }
+    
+    // Set timeout to remove the glow effect after animation completes
+    logoTimerRef.current = setTimeout(() => {
+      setIsGlowing(false);
+    }, 1500);
+  };
+
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (logoTimerRef.current) {
+        clearTimeout(logoTimerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link to="/" className="flex items-center gap-2">
-              <Film className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">MoveLens</span>
+            <Link 
+              to="/" 
+              className="flex items-center gap-2 relative"
+              onClick={handleLogoClick}
+            >
+              <Film className={`h-6 w-6 text-primary transition-all duration-300 ${isGlowing ? 'animate-pulse' : ''}`} />
+              <span className={`text-xl font-bold transition-all duration-500 ${isGlowing ? 'text-gradient-primary animate-pulse' : ''}`}>
+                MoveLens
+              </span>
+              {isGlowing && (
+                <span className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/50 to-accent/50 blur-xl rounded-full animate-pulse"></span>
+              )}
             </Link>
           </div>
 
