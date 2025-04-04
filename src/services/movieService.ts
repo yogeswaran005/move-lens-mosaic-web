@@ -1,4 +1,3 @@
-
 import { Movie, Featured, Category } from "@/types/movie";
 
 // Sample data
@@ -322,49 +321,6 @@ const popularMovies: Movie[] = [
   }
 ];
 
-const categories: Category[] = [
-  {
-    id: "action",
-    name: "Action",
-    imageUrl: "https://image.tmdb.org/t/p/original/hiHGRbyTcbZoLsYYkO4QiCLYe34.jpg"
-  },
-  {
-    id: "comedy",
-    name: "Comedy",
-    imageUrl: "https://image.tmdb.org/t/p/original/x1JkFXPOScVJ17ZKFnfNHXEJOKr.jpg"
-  },
-  {
-    id: "drama",
-    name: "Drama",
-    imageUrl: "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg"
-  },
-  {
-    id: "sci-fi",
-    name: "Sci-Fi",
-    imageUrl: "https://image.tmdb.org/t/p/original/lMWKrlqOIVUzwUCWiXDshEYhscg.jpg"
-  },
-  {
-    id: "horror",
-    name: "Horror",
-    imageUrl: "https://image.tmdb.org/t/p/original/bWIIWhnaoWx3NTMhqnhLs4Pu3Y1.jpg"
-  },
-  {
-    id: "romance",
-    name: "Romance",
-    imageUrl: "https://image.tmdb.org/t/p/original/33n39vWqClxEi6l1WfZ655gy4mX.jpg"
-  },
-  {
-    id: "animation",
-    name: "Animation",
-    imageUrl: "https://image.tmdb.org/t/p/original/hYJ46wQ2kkPxrEG0CLrhXmKvpxF.jpg"
-  },
-  {
-    id: "adventure",
-    name: "Adventure",
-    imageUrl: "https://image.tmdb.org/t/p/original/vJNJj4QgJrnR2I3jRiNI8qY94tF.jpg"
-  }
-];
-
 // Combine all movies for search functionality
 const allMovies = [
   ...featuredMovies, 
@@ -374,7 +330,7 @@ const allMovies = [
   ...koreanMovies
 ];
 
-// Update categories to include Language categories
+// Define categories with both genre and language categories
 const categories: Category[] = [
   { id: "action", name: "Action", imageUrl: "https://image.tmdb.org/t/p/original/hiHGRbyTcbZoLsYYkO4QiCLYe34.jpg" },
   { id: "comedy", name: "Comedy", imageUrl: "https://image.tmdb.org/t/p/original/x1JkFXPOScVJ17ZKFnfNHXEJOKr.jpg" },
