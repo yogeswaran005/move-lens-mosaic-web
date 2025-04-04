@@ -9,6 +9,9 @@ export interface Movie {
   duration: string;
   overview: string;
   genres: { id: string; name: string }[];
+  actors?: { id: string; name: string; photoUrl: string }[];
+  mood?: string[];
+  language?: string;
 }
 
 export interface Featured extends Movie {
@@ -19,4 +22,24 @@ export interface Category {
   id: string;
   name: string;
   imageUrl: string;
+}
+
+export interface Review {
+  id: string;
+  movieId: string;
+  userId: string;
+  userName: string;
+  userPhotoUrl: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  photoUrl: string;
+  favorites: string[];
+  watchlist: string[];
 }

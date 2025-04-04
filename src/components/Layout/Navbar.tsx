@@ -11,9 +11,13 @@ import {
   Home,
   Compass,
   Heart,
-  Star
+  Star,
+  Users,
+  Settings
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import ThemeSwitcher from "./ThemeSwitcher";
+import ProfileMenu from "@/components/Profile/ProfileMenu";
 
 export const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,6 +52,7 @@ export const Navbar = () => {
               <Link to="/movies" className="text-foreground/80 hover:text-primary transition-colors">Movies</Link>
               <Link to="/genres" className="text-foreground/80 hover:text-primary transition-colors">Genres</Link>
               <Link to="/trending" className="text-foreground/80 hover:text-primary transition-colors">Trending</Link>
+              <Link to="/actors" className="text-foreground/80 hover:text-primary transition-colors">Actors</Link>
             </div>
           )}
 
@@ -69,13 +74,14 @@ export const Navbar = () => {
                 <Search className="h-4 w-4" />
               </Button>
             </form>
-            {isMobile ? (
+            
+            <ThemeSwitcher />
+            
+            <ProfileMenu />
+            
+            {isMobile && (
               <Button variant="ghost" size="icon" onClick={toggleMenu}>
                 {isMenuOpen ? <X /> : <Menu />}
-              </Button>
-            ) : (
-              <Button asChild>
-                <Link to="/login">Sign In</Link>
               </Button>
             )}
           </div>
@@ -120,9 +126,17 @@ export const Navbar = () => {
               <Star className="h-5 w-5 text-primary" />
               <span>Trending</span>
             </Link>
+            <Link to="/actors" className="flex items-center p-3 gap-3 hover:bg-secondary rounded-md" onClick={() => setIsMenuOpen(false)}>
+              <Users className="h-5 w-5 text-primary" />
+              <span>Actors</span>
+            </Link>
             <Link to="/favorites" className="flex items-center p-3 gap-3 hover:bg-secondary rounded-md" onClick={() => setIsMenuOpen(false)}>
               <Heart className="h-5 w-5 text-primary" />
               <span>Favorites</span>
+            </Link>
+            <Link to="/settings" className="flex items-center p-3 gap-3 hover:bg-secondary rounded-md" onClick={() => setIsMenuOpen(false)}>
+              <Settings className="h-5 w-5 text-primary" />
+              <span>Settings</span>
             </Link>
             
             <div className="border-t border-border my-4"></div>

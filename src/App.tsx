@@ -13,6 +13,8 @@ import Genres from "./pages/Genres";
 import GenreDetails from "./pages/GenreDetails";
 import Search from "./pages/Search";
 import Trending from "./pages/Trending";
+import Actors from "./pages/Actors";
+import ActorDetails from "./pages/ActorDetails";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
@@ -33,6 +35,8 @@ const App = () => (
           <Route path="/genre/:id" element={<GenreDetails />} />
           <Route path="/search" element={<Search />} />
           <Route path="/trending" element={<Trending />} />
+          <Route path="/actors" element={<Actors />} />
+          <Route path="/actor/:id" element={<ActorDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />

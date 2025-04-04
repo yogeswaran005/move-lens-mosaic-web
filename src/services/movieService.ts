@@ -17,7 +17,14 @@ const featuredMovies: Featured[] = [
       { id: "sci-fi", name: "Sci-Fi" },
       { id: "adventure", name: "Adventure" },
       { id: "drama", name: "Drama" }
-    ]
+    ],
+    actors: [
+      { id: "a1", name: "Timothée Chalamet", photoUrl: "https://image.tmdb.org/t/p/w200/BE2sdjpgsa2rYWUKR3XGKilihFJ.jpg" },
+      { id: "a2", name: "Zendaya", photoUrl: "https://image.tmdb.org/t/p/w200/r3A7ev7QkjOGocVn3kQrJ0eOouk.jpg" },
+      { id: "a3", name: "Rebecca Ferguson", photoUrl: "https://image.tmdb.org/t/p/w200/lJloTOheuQSirSLXNA3ZHwyJ8y3.jpg" }
+    ],
+    mood: ["thrilling", "epic", "intense"],
+    language: "English"
   },
   {
     id: "2",
@@ -33,7 +40,14 @@ const featuredMovies: Featured[] = [
       { id: "drama", name: "Drama" },
       { id: "history", name: "History" },
       { id: "biography", name: "Biography" }
-    ]
+    ],
+    actors: [
+      { id: "a4", name: "Cillian Murphy", photoUrl: "https://image.tmdb.org/t/p/w200/llkbyWKwoll9SQjM7Sk3YjuBPdX.jpg" },
+      { id: "a5", name: "Emily Blunt", photoUrl: "https://image.tmdb.org/t/p/w200/xDc4gBluBBpbG3c6y6cLVz4ZP7c.jpg" },
+      { id: "a6", name: "Robert Downey Jr.", photoUrl: "https://image.tmdb.org/t/p/w200/im9SAqJPZKEbVZGmjXuLI4O7RvM.jpg" }
+    ],
+    mood: ["intense", "thought-provoking", "dramatic"],
+    language: "English"
   },
   {
     id: "3",
@@ -49,7 +63,107 @@ const featuredMovies: Featured[] = [
       { id: "action", name: "Action" },
       { id: "sci-fi", name: "Sci-Fi" },
       { id: "adventure", name: "Adventure" }
-    ]
+    ],
+    actors: [
+      { id: "a7", name: "Rebecca Hall", photoUrl: "https://image.tmdb.org/t/p/w200/gR5CdLJCZaI3kCfZ4Z3lzJ3R5aC.jpg" },
+      { id: "a8", name: "Brian Tyree Henry", photoUrl: "https://image.tmdb.org/t/p/w200/1h4sYHLdEOTwgaga0G2SfQcek2f.jpg" },
+      { id: "a9", name: "Dan Stevens", photoUrl: "https://image.tmdb.org/t/p/w200/7qop8j4sEMQm1LBHGzXzQfQsdMZ.jpg" }
+    ],
+    mood: ["exciting", "thrilling", "epic"],
+    language: "English"
+  }
+];
+
+// Add Tamil and Korean movies
+const tamilMovies: Movie[] = [
+  {
+    id: "20",
+    title: "Jailer",
+    posterUrl: "https://image.tmdb.org/t/p/w500/bOXFJQdUJ1PU7RfJCXYByKn4Nni.jpg",
+    backdropUrl: "https://image.tmdb.org/t/p/original/tM5YPT5dOLvdKBu77J6b935KJDD.jpg",
+    year: "2023",
+    rating: "7.5",
+    duration: "2h 48min",
+    overview: "A retired jailer goes on a manhunt to find his son's killers. But the road leads him to a familiar place, facing off against old enemies and new allies.",
+    genres: [
+      { id: "action", name: "Action" },
+      { id: "thriller", name: "Thriller" }
+    ],
+    actors: [
+      { id: "a30", name: "Rajinikanth", photoUrl: "https://image.tmdb.org/t/p/w200/if0BYxKDOonnGKFx1h5IHgEgVRY.jpg" },
+      { id: "a31", name: "Mohanlal", photoUrl: "https://image.tmdb.org/t/p/w200/8tWt9VEXLGgtF9cUKgkrN2Tm8yk.jpg" },
+      { id: "a32", name: "Tamannaah Bhatia", photoUrl: "https://image.tmdb.org/t/p/w200/5ymqPHPOOl4bsRMYFzXRuWcKwm9.jpg" }
+    ],
+    mood: ["thrilling", "action-packed", "intense"],
+    language: "Tamil"
+  },
+  {
+    id: "21",
+    title: "Leo",
+    posterUrl: "https://image.tmdb.org/t/p/w500/pTDpZpJ7mcqJSQEJ5aqrbLOvrX5.jpg",
+    backdropUrl: "https://image.tmdb.org/t/p/original/lkVpWgn2x0D1hCsKgCvzxz0CJhJ.jpg",
+    year: "2023",
+    rating: "7.3",
+    duration: "2h 44min",
+    overview: "Parthiban is a mild-mannered café owner in Kashmir, who fends off a gang of murderous thugs and becomes a target of Leo Das, a notorious criminal who believes Parthiban is his long-lost brother.",
+    genres: [
+      { id: "action", name: "Action" },
+      { id: "thriller", name: "Thriller" }
+    ],
+    actors: [
+      { id: "a33", name: "Vijay", photoUrl: "https://image.tmdb.org/t/p/w200/mfHzMRVQYs9k4vB8rE7CZkbwRY9.jpg" },
+      { id: "a34", name: "Trisha Krishnan", photoUrl: "https://image.tmdb.org/t/p/w200/86cX0GJT9RKttHdLn0mluRpCZZY.jpg" },
+      { id: "a35", name: "Sanjay Dutt", photoUrl: "https://image.tmdb.org/t/p/w200/5lc0Vw0fIMzrZydr5N5N5kn7kY.jpg" }
+    ],
+    mood: ["intense", "action-packed", "thrilling"],
+    language: "Tamil"
+  }
+];
+
+const koreanMovies: Movie[] = [
+  {
+    id: "22",
+    title: "Parasite",
+    posterUrl: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    backdropUrl: "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+    year: "2019",
+    rating: "8.6",
+    duration: "2h 12min",
+    overview: "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+    genres: [
+      { id: "thriller", name: "Thriller" },
+      { id: "comedy", name: "Comedy" },
+      { id: "drama", name: "Drama" }
+    ],
+    actors: [
+      { id: "a36", name: "Song Kang-ho", photoUrl: "https://image.tmdb.org/t/p/w200/myZTvyYcDqIYjBkXs6nZaeHk0Rz.jpg" },
+      { id: "a37", name: "Lee Sun-kyun", photoUrl: "https://image.tmdb.org/t/p/w200/rEKRPxLyeqQoGkJKvGWHy9xDEAA.jpg" },
+      { id: "a38", name: "Cho Yeo-jeong", photoUrl: "https://image.tmdb.org/t/p/w200/r74hBU56JQE0TTzJJOhCXGPuL0A.jpg" }
+    ],
+    mood: ["thought-provoking", "intense", "suspenseful"],
+    language: "Korean"
+  },
+  {
+    id: "23",
+    title: "Train to Busan",
+    posterUrl: "https://image.tmdb.org/t/p/w500/2lLxfaYS0Hu5WBk8HQfaIyLfBCj.jpg",
+    backdropUrl: "https://image.tmdb.org/t/p/original/fVpFOcQyHJM2di9upgSIwWD5wvT.jpg",
+    year: "2016",
+    rating: "7.8",
+    duration: "1h 58min",
+    overview: "When a zombie virus breaks out in South Korea, passengers struggle to survive on the train from Seoul to Busan.",
+    genres: [
+      { id: "horror", name: "Horror" },
+      { id: "action", name: "Action" },
+      { id: "thriller", name: "Thriller" }
+    ],
+    actors: [
+      { id: "a39", name: "Gong Yoo", photoUrl: "https://image.tmdb.org/t/p/w200/5SAmzx40A0C3VOgzYPlcOmwmEBG.jpg" },
+      { id: "a40", name: "Jung Yu-mi", photoUrl: "https://image.tmdb.org/t/p/w200/j7iBzVY38NzLSYOYKXcWOvHKC6L.jpg" },
+      { id: "a41", name: "Ma Dong-seok", photoUrl: "https://image.tmdb.org/t/p/w200/9ZZzFDzUZCAvAGdidYTbNQA3JFx.jpg" }
+    ],
+    mood: ["intense", "heart-racing", "emotional"],
+    language: "Korean"
   }
 ];
 
@@ -252,7 +366,39 @@ const categories: Category[] = [
 ];
 
 // Combine all movies for search functionality
-const allMovies = [...featuredMovies, ...trendingMovies, ...popularMovies];
+const allMovies = [
+  ...featuredMovies, 
+  ...trendingMovies, 
+  ...popularMovies, 
+  ...tamilMovies, 
+  ...koreanMovies
+];
+
+// Update categories to include Language categories
+const categories: Category[] = [
+  { id: "action", name: "Action", imageUrl: "https://image.tmdb.org/t/p/original/hiHGRbyTcbZoLsYYkO4QiCLYe34.jpg" },
+  { id: "comedy", name: "Comedy", imageUrl: "https://image.tmdb.org/t/p/original/x1JkFXPOScVJ17ZKFnfNHXEJOKr.jpg" },
+  { id: "drama", name: "Drama", imageUrl: "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg" },
+  { id: "sci-fi", name: "Sci-Fi", imageUrl: "https://image.tmdb.org/t/p/original/lMWKrlqOIVUzwUCWiXDshEYhscg.jpg" },
+  { id: "horror", name: "Horror", imageUrl: "https://image.tmdb.org/t/p/original/bWIIWhnaoWx3NTMhqnhLs4Pu3Y1.jpg" },
+  { id: "romance", name: "Romance", imageUrl: "https://image.tmdb.org/t/p/original/33n39vWqClxEi6l1WfZ655gy4mX.jpg" },
+  { id: "animation", name: "Animation", imageUrl: "https://image.tmdb.org/t/p/original/hYJ46wQ2kkPxrEG0CLrhXmKvpxF.jpg" },
+  { id: "adventure", name: "Adventure", imageUrl: "https://image.tmdb.org/t/p/original/vJNJj4QgJrnR2I3jRiNI8qY94tF.jpg" },
+  { id: "tamil", name: "Tamil Movies", imageUrl: "https://image.tmdb.org/t/p/original/tM5YPT5dOLvdKBu77J6b935KJDD.jpg" },
+  { id: "korean", name: "Korean Movies", imageUrl: "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg" }
+];
+
+// Moods for filtering
+const moods = [
+  { id: "funny", name: "Funny" },
+  { id: "thrilling", name: "Thrilling" },
+  { id: "heart-breaking", name: "Heart-breaking" },
+  { id: "intense", name: "Intense" },
+  { id: "thought-provoking", name: "Thought-provoking" },
+  { id: "action-packed", name: "Action-packed" },
+  { id: "epic", name: "Epic" },
+  { id: "emotional", name: "Emotional" }
+];
 
 export const getMovieById = (id: string): Movie | undefined => {
   return allMovies.find(movie => movie.id === id);
@@ -274,6 +420,10 @@ export const getCategories = (): Category[] => {
   return categories;
 };
 
+export const getMoods = () => {
+  return moods;
+};
+
 export const searchMovies = (query: string): Movie[] => {
   const lowerCaseQuery = query.toLowerCase();
   return allMovies.filter(movie => 
@@ -286,4 +436,40 @@ export const getMoviesByGenre = (genreId: string): Movie[] => {
   return allMovies.filter(movie => 
     movie.genres.some(genre => genre.id === genreId)
   );
+};
+
+export const getMoviesByLanguage = (language: string): Movie[] => {
+  return allMovies.filter(movie => movie.language === language);
+};
+
+export const getTamilMovies = (): Movie[] => {
+  return tamilMovies;
+};
+
+export const getKoreanMovies = (): Movie[] => {
+  return koreanMovies;
+};
+
+export const getMoviesByMood = (mood: string): Movie[] => {
+  return allMovies.filter(movie => movie.mood?.includes(mood));
+};
+
+export const getMoviesByActor = (actorId: string): Movie[] => {
+  return allMovies.filter(movie => 
+    movie.actors?.some(actor => actor.id === actorId)
+  );
+};
+
+export const getAllActors = () => {
+  const actorsMap = new Map();
+  
+  allMovies.forEach(movie => {
+    movie.actors?.forEach(actor => {
+      if (!actorsMap.has(actor.id)) {
+        actorsMap.set(actor.id, actor);
+      }
+    });
+  });
+  
+  return Array.from(actorsMap.values());
 };
