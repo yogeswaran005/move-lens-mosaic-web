@@ -14,6 +14,10 @@ export interface Movie {
   language?: string;
 }
 
+export interface MovieForComparison extends Movie {
+  selected?: boolean;
+}
+
 export interface Featured extends Movie {
   description: string;
 }

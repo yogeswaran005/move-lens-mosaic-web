@@ -18,6 +18,7 @@ import ActorDetails from "./pages/ActorDetails";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import CompareMovies from "./pages/CompareMovies";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/actor/:id" element={<ActorDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/compare" element={<CompareMovies />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

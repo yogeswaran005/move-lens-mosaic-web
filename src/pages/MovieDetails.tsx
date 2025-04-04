@@ -17,6 +17,7 @@ import MovieGrid from "@/components/Movies/MovieGrid";
 import ActorsList from "@/components/Movies/ActorsList";
 import ReviewSection from "@/components/Movies/ReviewSection";
 import SocialShare from "@/components/Common/SocialShare";
+import CompareButton from "@/components/Movies/CompareButton";
 import { getMovieById, getMoviesByGenre } from "@/services/movieService";
 import { isInFavorites, toggleFavorite, isInWatchlist, toggleWatchlist } from "@/services/userService";
 
@@ -174,6 +175,8 @@ const MovieDetails = () => {
                 <Plus className="h-5 w-5" />
                 {isInWatchList ? "In Watchlist" : "Add to Watchlist"}
               </Button>
+              
+              <CompareButton movieId={movie.id} />
               
               <SocialShare 
                 url={window.location.href} 

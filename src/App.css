@@ -1,2 +1,17 @@
+
 /* This file contains legacy styles that have been replaced by Tailwind CSS */
 /* Most styles are now in index.css using Tailwind's utility classes */
+
+/* Add styles for movie comparison feature */
+.comparison-highlight {
+  animation: highlight-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes highlight-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+  }
+}
