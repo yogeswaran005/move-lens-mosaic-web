@@ -28,16 +28,23 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-background p-4">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-background p-4 relative">
+      {/* Background overlay */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-[url('https://image.tmdb.org/t/p/original/lMWKrlqOIVUzwUCWiXDshEYhscg.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      </div>
+      
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2">
-            <Film className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold">MoveLens</span>
+          <Link to="/" className="inline-flex items-center gap-2 relative group">
+            <Film className="h-8 w-8 text-primary group-hover:animate-pulse transition-all duration-300" />
+            <span className="text-2xl font-bold group-hover:text-gradient-primary transition-all duration-300">MoveLens</span>
+            <span className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/0 to-accent/0 group-hover:from-primary/30 group-hover:to-accent/30 blur-xl rounded-full transition-all duration-500"></span>
           </Link>
         </div>
         
-        <div className="bg-card rounded-lg shadow-lg p-8">
+        <div className="bg-card/90 backdrop-blur-sm rounded-lg shadow-lg p-8">
           <h1 className="text-2xl font-bold mb-6">Sign In</h1>
           
           <form onSubmit={handleSubmit} className="space-y-4">
