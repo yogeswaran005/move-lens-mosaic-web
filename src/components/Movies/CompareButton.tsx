@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useCompareStore } from "@/services/compareService";
 import { Link } from "react-router-dom";
-import { Compare } from "lucide-react";
+import { SplitSquareVertical } from "lucide-react";
 import { toast } from "sonner";
 import { useState, useEffect } from "react";
 
@@ -48,7 +48,7 @@ const CompareButton = ({
         onClick={() => removeFromComparison(movieId)}
         className="gap-2"
       >
-        <Compare className="h-4 w-4" />
+        <SplitSquareVertical className="h-4 w-4" />
         Remove
       </Button>
     );
@@ -61,7 +61,7 @@ const CompareButton = ({
       onClick={handleToggleComparison}
       className={`gap-2 ${inList ? 'bg-primary text-primary-foreground' : ''}`}
     >
-      <Compare className="h-4 w-4" />
+      <SplitSquareVertical className="h-4 w-4" />
       {inList ? "Added to Compare" : "Compare"}
     </Button>
   );
