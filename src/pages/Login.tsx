@@ -6,11 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Film } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const { theme } = useTheme();
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,8 +33,8 @@ const Login = () => {
     <div className="min-h-screen flex flex-col justify-center items-center bg-background p-4 relative">
       {/* Background overlay */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[url('https://image.tmdb.org/t/p/original/lMWKrlqOIVUzwUCWiXDshEYhscg.jpg')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-[url('https://i.imgur.com/TmOiOGv.jpeg')] bg-cover bg-center opacity-20"></div>
+        <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-background/90' : 'bg-background/80'} backdrop-blur-sm`}></div>
       </div>
       
       <div className="w-full max-w-md">
@@ -44,7 +46,7 @@ const Login = () => {
           </Link>
         </div>
         
-        <div className="bg-card/90 backdrop-blur-sm rounded-lg shadow-lg p-8">
+        <div className={`${theme === 'dark' ? 'bg-card/90' : 'bg-card/95'} backdrop-blur-sm rounded-lg shadow-lg p-8 transition-all duration-300`}>
           <h1 className="text-2xl font-bold mb-6">Sign In</h1>
           
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -58,6 +60,7 @@ const Login = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="focus:ring-primary focus:border-primary"
               />
             </div>
             
@@ -76,6 +79,7 @@ const Login = () => {
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="focus:ring-primary focus:border-primary"
               />
             </div>
             
@@ -84,6 +88,7 @@ const Login = () => {
                 id="remember" 
                 checked={rememberMe} 
                 onCheckedChange={(checked) => setRememberMe(checked as boolean)} 
+                className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
               />
               <label
                 htmlFor="remember"
@@ -93,7 +98,11 @@ const Login = () => {
               </label>
             </div>
             
-            <Button type="submit" className="w-full">
+            <Button 
+              type="submit" 
+              className="w-full"
+              size="lg"
+            >
               Sign In
             </Button>
           </form>
@@ -101,7 +110,7 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Don't have an account?{" "}
-              <Link to="/register" className="text-primary hover:underline">
+              <Link to="/register" className="text-primary hover:underline font-semibold">
                 Sign up
               </Link>
             </p>
@@ -109,7 +118,7 @@ const Login = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <Link to="/" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
             &larr; Back to home
           </Link>
         </div>
