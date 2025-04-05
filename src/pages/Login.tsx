@@ -6,9 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Film } from "lucide-react";
-import { useTheme } from "@/contexts/ThemeContext";
+import { ThemeProvider, useTheme } from "@/contexts/ThemeContext";
 
-const Login = () => {
+// Create a separate component that uses the theme context
+const LoginContent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -124,6 +125,15 @@ const Login = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+// Main component that wraps the content with ThemeProvider
+const Login = () => {
+  return (
+    <ThemeProvider>
+      <LoginContent />
+    </ThemeProvider>
   );
 };
 
