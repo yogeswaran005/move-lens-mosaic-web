@@ -34,7 +34,7 @@ const LoginContent = () => {
     <div className="min-h-screen flex flex-col justify-center items-center bg-background p-4 relative">
       {/* Background overlay with movie collage */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[url('https://image.tmdb.org/t/p/original/pB1IJkQLBoTr4bqNh9b2GMkICBn.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://image.tmdb.org/t/p/original/q4OftN9aYLMFFhRQbzw4PghkhZb.jpg')] bg-cover bg-center opacity-20"></div>
         <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-background/90' : 'bg-background/80'} backdrop-blur-sm`}></div>
       </div>
       
